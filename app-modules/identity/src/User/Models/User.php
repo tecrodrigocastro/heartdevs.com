@@ -27,6 +27,7 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Laravel\Sanctum\HasApiTokens;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 
@@ -52,6 +53,7 @@ final class User extends Authenticatable implements FilamentUser, HasMedia, HasN
 {
     use HasAddress;
     /** @use HasFactory<UserFactory> */
+    use HasApiTokens;
     use HasFactory;
     use HasInteractions;
     use HasUuids;
